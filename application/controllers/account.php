@@ -35,7 +35,7 @@ class Account extends CI_Controller {
 
 	public function logout(){
 		if ($this->session->userdata('login')) {
-			$this->sess_destroy('login');
+			$this->session->sess_destroy('login');
 		}
 		redirect('home');
 	}
