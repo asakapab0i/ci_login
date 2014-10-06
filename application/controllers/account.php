@@ -5,7 +5,6 @@ class Account extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('account_model');
-		$this->output->enable_profiler(TRUE);
 	}
 
 	public function index(){
@@ -15,7 +14,7 @@ class Account extends CI_Controller {
 	public function login(){
 		$data['head'] = 'Login';
 		$data['title'] = 'Account Login';
-		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		if ($this->input->post()){
 			if ($this->form_validation->run() == FALSE) {
